@@ -14,7 +14,7 @@ dbConnection((response) => {
 app.use(express.json());
 app.use("/v1", router);
 app.get("/", (req, res, next) => {
-  return res.jsonp({ error: 0, message: OK });
+  return res.jsonp({ error: 0, message: "OK" });
 });
 app.listen(PORT, () => {
   console.log(`server is up at ${PORT}`);
