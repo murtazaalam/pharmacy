@@ -13,9 +13,10 @@ app.get("/", (req, res, next) => {
   return res.jsonp({ error: 0, message: "OK" });
 });
 dbConnection((response) => {
+  app.listen(PORT, () => {
+    console.log(`server is up at ${PORT}`);
+  });
   if (response) process.exit(1);
   console.log("Db connection success");
 });
-app.listen(PORT, () => {
-  console.log(`server is up at ${PORT}`);
-});
+
